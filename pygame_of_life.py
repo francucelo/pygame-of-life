@@ -1,11 +1,13 @@
 import pygame
 import numpy as np
 from tkinter import messagebox, simpledialog
+import math
 
 # --- Parameters ---
 COLOR_BG = np.array([16, 16, 16], dtype=np.uint8)
 COLOR_ALIVE = np.array([128, 128, 128], dtype=np.uint8)
 PAUSE_FPS = 0 # 0 = No limitation
+DENSITY = (math.sqrt(5) - 1) / 4 # Half of the Golden Ratio
 
 def show_help() -> None:
     messagebox.showinfo(
@@ -35,7 +37,7 @@ def update_grid(g : np.ndarray) -> np.ndarray:
     return (neighbors == 3) | (g & (neighbors == 2))
 
 def random_grid(width : int, height : int) -> np.ndarray:
-    return np.random.random((width, height)) < 0.375
+    return np.random.random((width, height)) < DENSITY
 
 def main() -> None:
     show_help()
