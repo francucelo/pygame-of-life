@@ -3,6 +3,8 @@ An interactive, high-performance implementation of **Conway's Game of Life** bui
 
 Featuring vectorized grid computations with toroidal (wrap-around) boundaries, real-time interactive drawing, state history detection (auto-reset/auto-pause on infinite loops), and full runtime customization.
 
+In addition to desktop use, this program has also been optimized for live streaming and is suitable for overlaying on the screen.
+
 ## Features
 
 - **High Performance**: Vectorized cell update calculations using NumPy array operations.
@@ -61,13 +63,21 @@ python pygame_of_life.py
 | **`I`** | Show simulation Info (FPS, Generation, Flags) |
 | **`H`** | Open Help dialog |
 
+## Insert into the live stream screen
+
+To insert this program into a live stream or recording, simply follow these steps:
+
+- Press `W` to switch the window to unscaled mode so it can be adjusted in the streaming software.
+- Minimize the window, then select it in the streaming software to insert it.
+- Set the scaling algorithm for this window in the streaming software to "Nearest Neighbor".
+
 ## Technical Highlights
 
 1. **Vectorized Grid Logic (`NumPy`)**:
    Instead of iterating over individual cells with nested loops, neighbor counting is performed via array slicing with `np.pad(..., mode='wrap')`. This allows standard Game of Life rules to be evaluated instantly across large grids.
 2. **Loop & Stagnation Detection**:
    The grid state is packed into compact bytes via `np.packbits().tobytes()` and hashed. Storing hash history enables constant time $O(1)$ loop detection to automatically trigger resets or pauses.
-3. **Optimal Initial Density**: ($p = \frac{\sqrt{5}-1}{4} \approx 30.9\%$): To maximize dynamic evolution in B3/S23 Conway's rules, the initial state uses half the Golden Ratio. This value solves $\frac{d}{dp} P(k \in \{2,3\}) = 0$, reduced to $4p^2 + 2p - 1 = 0$, optimizing local cell transition activity while preventing rapid extinction or overpopulation saturation.
+3. **Optimal Initial Density** ($p = \frac{\sqrt{5}-1}{4} \approx 30.9\%$): To maximize dynamic evolution in B3/S23 Conway's rules, the initial state uses half the Golden Ratio. This value solves $\frac{d}{dp} P(k \in \{2,3\}) = 0$, reduced to $4p^2 + 2p - 1 = 0$, optimizing local cell transition activity while preventing rapid extinction or overpopulation saturation.
 
 ## License
 
