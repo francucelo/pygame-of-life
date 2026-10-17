@@ -47,7 +47,7 @@ pip install pygame numpy
 
 ### 3. Run the application
 ```bash
-python pygame_of_life.py
+python pygame-of-life.py
 ```
 
 ## Controls & Keybindings
