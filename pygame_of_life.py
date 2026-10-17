@@ -9,7 +9,7 @@ root.withdraw()
 # --- Parameters ---
 COLOR_BG = np.array([16, 16, 16], dtype=np.uint8)
 COLOR_ALIVE = np.array([128, 128, 128], dtype=np.uint8)
-PAUSE_FPS = 0 # 0 = No limitation
+PAUSE_FPS = 24
 DENSITY = 1/3
 
 def show_help() -> None:
@@ -151,6 +151,7 @@ def main() -> None:
                 else:
                     history.add(current_hash)
             grid = update_grid(grid)
+            clock.tick(fps)
         else:
             # Draw and erase cells with mouse
             mouse_pressed = pygame.mouse.get_pressed()
@@ -159,6 +160,9 @@ def main() -> None:
                 if 0 <= x < width and 0 <= y < height:
                     grid[x, y] = True if mouse_pressed[0] else False
                     history.clear()
+                clock.tick(0) # 0 = No Limitation
+            else:
+                clock.tick(PAUSE_FPS)
 
         # Image rendering
         pixels = pygame.surfarray.pixels3d(grid_surface)
@@ -168,7 +172,6 @@ def main() -> None:
         screen.blit(grid_surface, (0, 0))
 
         pygame.display.flip()
-        clock.tick(fps if not paused else PAUSE_FPS)
 
     pygame.quit()
 
