@@ -1,5 +1,8 @@
 # Conway's Game of Life (Pygame + NumPy)
 
+![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
 An interactive, high-performance implementation of **Conway's Game of Life** built with Python, Pygame, and NumPy. 
 
 Featuring vectorized grid computations with toroidal (wrap-around) boundaries, real-time interactive drawing, state history detection (auto-reset/auto-pause on infinite loops), and full runtime customization.
