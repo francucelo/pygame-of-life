@@ -1,7 +1,10 @@
 import pygame
 import numpy as np
+import tkinter as tk
 from tkinter import messagebox, simpledialog
-import math
+
+root = tk.Tk()
+root.withdraw()
 
 # --- Parameters ---
 COLOR_BG = np.array([16, 16, 16], dtype=np.uint8)
