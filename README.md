@@ -38,7 +38,7 @@ In addition to desktop use, this program has also been optimized for live stream
 git clone https://github.com/francucelo/pygame-game-of-life.git
 cd pygame-game-of-life
 ```
-Or download directly `pygame-game-of-life.py`.
+Or download directly `pygame_of_life.py`.
 
 ### 2. Install dependencies
 ```bash
@@ -47,7 +47,7 @@ pip install pygame numpy
 
 ### 3. Run the application
 ```bash
-python pygame-of-life.py
+python pygame_of_life.py
 ```
 
 ## Controls & Keybindings
