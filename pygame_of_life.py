@@ -160,7 +160,7 @@ def main() -> None:
                 if 0 <= x < width and 0 <= y < height:
                     grid[x, y] = True if mouse_pressed[0] else False
                     history.clear()
-                clock.tick(0) # 0 = No Limitation
+                clock.tick(360)
             else:
                 clock.tick(PAUSE_FPS)
 
