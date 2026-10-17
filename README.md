@@ -6,13 +6,7 @@ Featuring vectorized grid computations with toroidal (wrap-around) boundaries, r
 
 In addition to desktop use, this program has also been optimized for live streaming and is suitable for overlaying on the screen.
 
-<p align="center">
-  <img src="./demo.gif" width="320" style="
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-  " />
-</p>
+![Demo GIF](demo.gif)
 
 ## Features
 
