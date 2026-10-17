@@ -10,7 +10,7 @@ root.withdraw()
 COLOR_BG = np.array([16, 16, 16], dtype=np.uint8)
 COLOR_ALIVE = np.array([128, 128, 128], dtype=np.uint8)
 PAUSE_FPS = 24
-DENSITY = 1/3
+DENSITY = 3 / 8
 
 def show_help() -> None:
     messagebox.showinfo(
