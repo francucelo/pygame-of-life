@@ -35,7 +35,7 @@ In addition to desktop use, this program has also been optimized for live stream
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/pygame-game-of-life.git
+git clone https://github.com/francucelo/pygame-game-of-life.git
 cd pygame-game-of-life
 ```
 Or download directly `pygame-game-of-life.py`.
