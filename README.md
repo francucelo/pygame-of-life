@@ -80,7 +80,7 @@ To insert this program into a live stream or recording, simply follow these step
    Instead of iterating over individual cells with nested loops, neighbor counting is performed via array slicing with `np.pad(..., mode='wrap')`. This allows standard Game of Life rules to be evaluated instantly across large grids.
 2. **Loop & Stagnation Detection**:
    The grid state is packed into compact bytes via `np.packbits().tobytes()` and hashed. Storing hash history enables constant time $O(1)$ loop detection to automatically trigger resets or pauses.
-3. **Optimal Initial Density** ($p = \frac{\sqrt{5}-1}{4} \approx 30.9%$): To maximize dynamic evolution in B3/S23 Conway's rules, the initial state uses half the Golden Ratio. This value solves $\frac{d}{dp} P(k \in \{2,3\}) = 0$, reduced to $4p^2 + 2p - 1 = 0$, optimizing local cell transition activity while preventing rapid extinction or overpopulation saturation.
+3. **Optimal Initial Density** ($p = \frac{\sqrt{5}-1}{4} \approx 30.9\%$): To maximize dynamic evolution in B3/S23 Conway's rules, the initial state uses half the Golden Ratio. This value solves $\frac{d}{dp} P(k \in \{2,3\}) = 0$, reduced to $4p^2 + 2p - 1 = 0$, optimizing local cell transition activity while preventing rapid extinction or overpopulation saturation.
 
 ## License
 
