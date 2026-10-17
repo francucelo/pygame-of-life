@@ -147,9 +147,7 @@ def main() -> None:
                         paused = True
                 else:
                     history.add(current_hash)
-                    grid = update_grid(grid)
-            else:
-                grid = update_grid(grid)
+            grid = update_grid(grid)
         else:
             # Draw and erase cells with mouse
             mouse_pressed = pygame.mouse.get_pressed()
