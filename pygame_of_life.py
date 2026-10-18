@@ -25,6 +25,7 @@ def show_help() -> None:
         "S = Change Size\n" \
         "P = Screenshot\n" \
         "W = Switch screen mode\n" \
+        "F11 = Toggle Fullscreen" \
         "Space = Pause\n" \
         "Enter = Next generation\n" \
     )
