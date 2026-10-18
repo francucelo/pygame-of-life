@@ -65,6 +65,7 @@ python pygame_of_life.py
 | **`S`** | Change Grid Size (width and height) |
 | **`F`** | Change Target FPS (`0` = uncapped) |
 | **`W`** | Toggle Screen Scaling Mode (`SCALED` / standard) |
+| **`F11`**| Toggle Fullcreen |
 | **`P`** | Save Screenshot (`screenshot.png`) |
 | **`I`** | Show simulation Info (FPS, Generation, Flags) |
 | **`H`** | Open Help dialog |
