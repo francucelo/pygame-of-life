@@ -2,6 +2,7 @@ import pygame
 import numpy as np
 import tkinter as tk
 from tkinter import messagebox, simpledialog
+import zlib
 
 root = tk.Tk()
 root.withdraw()
@@ -108,8 +109,9 @@ def main() -> None:
                         new_fps = simpledialog.askinteger("Enter a value", "FPS (0 = No limitation)", minvalue=0)
                         fps = new_fps if new_fps is not None else fps
                     case pygame.K_p: # Screenshot
-                        pygame.image.save(screen, "screenshot.png")
-                        messagebox.showinfo("Screenshot", "You have taken a screenshot")
+                        filename : str = f"screenshot_{zlib.crc32(np.packbits(grid).tobytes()):08x}.png"
+                        pygame.image.save(screen, filename)
+                        messagebox.showinfo(filename, "You have taken a screenshot")
                     case pygame.K_s: # Change the grid's size
                         new_width = simpledialog.askinteger("Enter a value", "Width", minvalue=2)
                         new_height = simpledialog.askinteger("Enter a value", "Height", minvalue=2)
